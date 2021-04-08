@@ -1,0 +1,53 @@
+
+  <div class="reg-form">
+    <form #regform="ngForm">
+        <div class="form-group">
+          <label for="inputusername">Username</label>
+          <input type="text" class="form-control" placeholder="Username" name="username" ngModel #usr="ngModel" required>
+          <small *ngIf="usr.invalid">This is a required field</small>       
+        </div>
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" placeholder="Email" name="email" ngModel #useremail= "ngModel" required>
+            <small *ngIf="useremail.invalid">This is a required field</small>       
+          </div>
+          <div class="form-group">
+            <label for="mob" >Mobile</label>
+            <input type="number" class="form-control" 
+              placeholder="" name="mob" ngModel #mob="ngModel" required>
+              <small *ngIf="mob.invalid">This is a required field</small>   
+          </div> 
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" ngModel #pswd="ngModel" required>
+            <small *ngIf="pswd.invalid">This is a required field</small>   
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Confirm password</label>
+            <input type="password" class="form-control" placeholder="Confirm password" name="password" ngModel #confirmpswd="ngModel" required>
+            <small *ngIf="confirmpswd.invalid">This is a required field</small>   
+          </div>
+           <div class="form-group">
+            <label for="select">Gender</label>
+              <select class="form-control" id="select" name="gender" ngModel #gender="ngModel" required>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+              <small *ngIf="gender.invalid">This is a required field</small>   
+          </div>
+    <div class="form-group">
+            <label for="country">Country</label>
+            <input class="form-control" type="text" placeholder="Country" name="country" ngModel #country="ngModel" required>
+            <small *ngIf="country.invalid">This is a required field</small>   
+      </div>
+           
+         
+          
+          <button class="form-control"  type="submit" class="btn btn-primary" routerLink="../login" [disabled] ="regform.invalid">Register</button>
+            
+          
+       
+    </form>
+    
+    
+  </div>

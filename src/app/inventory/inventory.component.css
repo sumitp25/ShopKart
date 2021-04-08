@@ -1,0 +1,44 @@
+
+img{
+    height: 200px;
+    width: 100px;
+}
+
+.outer-div{
+    margin-top: 20px;
+
+}
+
+.product-body{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.product-desc{
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    flex-grow: 1;
+}
+
+.display-products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* column-gap: 50px; */
+}
+
+.display-card{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* height: 550px; */
+}
+
+h3{
+    text-align: center;
+}

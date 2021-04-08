@@ -1,0 +1,28 @@
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #007bff;
+    padding: 8px;
+    z-index: 9999;
+}
+
+.cart-class{
+    position: relative;
+}
+
+.cart-count{
+    padding: 0.1rem;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.75rem;
+}

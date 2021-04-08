@@ -1,0 +1,31 @@
+<!-- <h3>Login</h3>
+<form>
+<div><label> Username:</label> <input type="text" name="username" [(ngModel)]= "username" required minlength="4"/></div>
+<div><label>Enter Password:</label> <input type="password" name="password" [(ngModel)] = "password"/></div>
+<div><label></label><button (click)="login()">Login</button></div>
+</form>
+
+<div>Username is:- {{username}}</div> -->
+
+<div class="login-box">
+    <form #loginform="ngForm" >
+        <div class="form-group">
+          <label >Username</label>
+          <input type="text" class="form-control" [(ngModel)]= "username" name="username" ngModel #usr='ngModel' placeholder="Enter Username" required/>
+          <small *ngIf="usr.invalid">This is field is required</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control"  name ="password" ngModel  #password='ngModel'  placeholder="Password" required/>
+          <small *ngIf="password.invalid">This is field is required</small>
+        </div>
+      
+        <button  type="submit" class="btn btn-primary" (click) = "login()" [disabled]="loginform.invalid">Login </button>
+        <p></p>
+        <label for="">Already a member?</label>
+        <a class="btn btn-dark" href="reg" routerLink="../reg" >Register</a>
+
+      </form>
+</div>
+   
+

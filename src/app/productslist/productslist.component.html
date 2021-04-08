@@ -1,0 +1,38 @@
+<!-- <h2>List of Products</h2>
+<table border="1">
+    <thead><th>Name</th><th>Price</th></thead>
+    <tr *ngFor="let product of productList">
+        <td>{{ product.name}}</td>
+        <td>{{ product.price}}</td>
+        <td><img [src]="product.imgPath" alt=""></td>
+        <td><button>Add to cart</button></td>
+        <td *ngIf="isAdmin" ><button (click) ="delete(product.id)" >Delete</button></td>
+    </tr>
+</table> -->
+<div class="outer-div">
+    <div class="display-products">
+        <div *ngFor="let product of productList">
+            <div >
+                <div class="card display-card card-shadow">
+                  <img class="card-img-top" [src]="product.imgPath" alt="Card image" style="width:100%">
+                  <div class="card-body product-body">
+                      <div class="product-desc">
+                          <!-- <div> -->
+                            <p id="title" class="card-title">{{product.name}}</p>
+                            <p class="card-text">Rs : {{ product.price}}</p>
+                          <!-- </div> -->
+                       
+                        <!-- <button id="view-button" [routerLink] = "product.id">View</button> -->
+                      </div>
+                      <br>
+                    
+                    <button class="btn btn-primary" (click) ="addtocart(product)" *ngIf="!presentincart(product.id)">Add to cart</button>
+                    <button class="btn btn-success" *ngIf="presentincart(product.id)" routerLink="../cart" >Go to cart =></button>
+                  </div>
+                </div>
+                <br>
+        </div>
+              
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="update-inv">
+
+    <img class="card-img-top" [src]="product.imgPath" alt="Card image" style="width:100%">
+    <div class="card-body product-body">
+        <input type="text"  placeholder="Enter image url" id="imgfile" [(ngModel)] ="product.imgPath"  >
+        <!-- <div class="product-desc"> -->
+            <input id="title" class="card-title" type="text" [(ngModel)] = "product.name">
+            <input class="card-text" type="number" [(ngModel)] = "product.price" >
+        
+        <!-- </div> -->
+        <button (click) ="EmitProduct">Update</button>
+    </div>
+</div>
+

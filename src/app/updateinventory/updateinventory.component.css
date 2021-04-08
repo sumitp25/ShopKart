@@ -1,0 +1,27 @@
+.product-desc{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+img{
+    height: 300px;
+}
+
+.product-body{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: space-evenly;
+}
+
+#imgfile{
+    width: 255px;
+}
+
+.update-inv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

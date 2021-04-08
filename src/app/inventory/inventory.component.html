@@ -1,0 +1,61 @@
+<!-- <h2>List of Products</h2>
+<table border="1">
+    <thead><th>Name</th><th>Price</th></thead>
+    <tr *ngFor="let product of productList">
+        <td>{{ product.name}}</td>
+        <td>{{ product.price}}</td>
+        <td><img [src]="product.imgPath" alt=""></td>
+        <td><button>Add to cart</button></td>
+        <td *ngIf="isAdmin" ><button (click) ="delete(product.id)" >Delete</button></td>
+    </tr>
+</table> -->
+<!-- <div *ngIf="isAdmin" class="outer-div">
+  <div class="display-products">
+      <div *ngFor="let product of productList">
+          <div class="container">
+              <div class="card display-card">
+                <img class="card-img-top" [src]="product.imgPath" alt="Card image" style="width:100%">
+                <div class="card-body" class="product-body">
+                    <div class="product-desc">
+                        <div>
+                          <h4 class="card-title">{{product.name}}</h4>
+                          <p class="card-text">Price : {{ product.price}}</p>
+                        </div>
+                     
+                      <button id="view-button" [routerLink] = "product.id">View</button>
+                    </div>
+                    <br>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                  <br>
+                  <button *ngIf="isAdmin" (click) ="delete(product.id)" >Delete</button>
+                </div>
+              </div>
+              <br>
+      </div>
+            
+      </div>
+  </div>
+</div> -->
+
+<div *ngIf="isAdmin" class="outer-div">
+  <div class="display-products">
+      <div *ngFor="let product of productList">
+          <div class="container">
+              <div class="card display-card">
+                <app-updateinventory [product] ="product"></app-updateinventory>
+                <!-- <img class="card-img-top" [src]="product.imgPath" alt="Card image" style="width:100%">
+                <div class="card-body product-body">
+                    
+                    
+                  
+                </div> -->
+                <button (click) ="delete(product.id)" >Delete</button>
+              </div>
+              <br>
+      </div>
+            
+      </div>
+  </div>
+</div>
+
+<h3 *ngIf="!isAdmin">You don't have the rights to access this page</h3>

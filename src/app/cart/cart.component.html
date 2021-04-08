@@ -1,0 +1,57 @@
+<!-- <p>cart works!</p>
+
+<div *ngFor="let prod of this.cartproductlist">
+    <p>{{prod.name}}</p>
+</div> -->
+
+<div *ngIf="this.cartproductlist.length > 0" class="outer-div">
+    <div class="display-products">
+        <div *ngFor="let product of this.cartproductlist">
+            <div>
+                <div class="card display-card card-shadow">
+                  <img class="card-img-top" [src]="product.imgPath" alt="Card image" style="width:100%">
+                  <div class="card-body product-body">
+                      <div class="product-desc">
+                          <!-- <div> -->
+                            <p id="title" class="card-title">{{product.name}}</p>
+                            <p class="card-text">Rs : {{ product.price}}</p>
+                          <!-- </div> -->
+                       
+                        <!-- <button id="view-button" [routerLink] = "product.id">View</button> -->
+                      </div>
+                      <br>
+                    
+                      <!-- <button  class="fa fa-trash" ></button> -->
+                      <div class="cart-details">
+                        <div class="quant-details">
+                          <!-- <small>Quantity</small> -->
+                          <button (click)= "removeclick(product.id)">-</button>
+                          <!-- <p>{{this.prodquantity[product.id]}}</p> -->
+                          <span>{{this.prodquantity[product.id]}}</span>
+                          <button (click) ="addprod(product)">+</button>
+                        </div>
+                        
+                        <i class="fa fa-trash" (click) ="removefromcart(product.id)"></i>
+                      </div>
+                      
+                  </div>
+                </div>
+                <br>
+        </div>
+              
+        </div>
+    </div>
+
+    <div class="price-details">
+      <h3>Price details</h3>
+      <hr>
+      <div class="total-amt">
+        <h4>Grand Total</h4>
+        <p>{{totalamount |currency:"INR" }}</p>
+      </div>
+    </div>
+</div>
+
+<div *ngIf="this.cartproductlist.length == 0" class="empty-cart">
+  <h2>Cart is empty!!!</h2>
+</div>

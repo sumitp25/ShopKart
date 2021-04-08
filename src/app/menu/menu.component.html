@@ -1,0 +1,26 @@
+<!-- <ul class="nav nav-pills">
+    <li role="presentation"><a routerLink="login" >Login</a></li>  
+    <li role="presentation"><a routerLink="products" >Products</a></li> 
+    <li role="presentation"><a routerLink="inventory" >Inventory</a></li>  
+    <li role="presentation"><a routerLink="users" >Users</a></li>  
+    <li role="presentation"><a routerLink="cart" >Cart</a></li> 
+    <li role="presentation"><a routerLink="reg" >Registration</a></li>      
+</ul> -->
+
+<nav class="navbar navbar-expand-sm bg-primary  navbar-dark">
+    <ul class="navbar-nav ">
+        <li *ngIf="!isLogged" ><a class="navbar-brand" href="#" routerLink="Home" >ShopKart</a></li>
+        <li *ngIf="isLogged" ><a class="navbar-brand" href="#" routerLink="products" >Welcome {{username}}</a></li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li  *ngIf="!isLogged" class="nav-item active"role="presentation"><a class="nav-link" routerLink="login"  >Login</a></li>  
+        <li  *ngIf="isLogged" class="nav-item active"role="presentation"><a class="nav-link" routerLink="login" (click)="logout()"  >Logout</a></li>  
+        <li  class="nav-item active" role="presentation"><a class="nav-link" routerLink="products" >Products</a></li> 
+        <li *ngIf="isLogged && username=='admin' " class="nav-item active" role="presentation"><a class="nav-link" routerLink="inventory" >Inventory</a></li>  
+        <!-- <li class="nav-item active" role="presentation"><a class="nav-link" routerLink="users" >Users</a></li>   -->
+        <li *ngIf="isLogged" class="nav-item active cart-class" role="presentation"><a class="nav-link" routerLink="cart" >Cart</a><span class="cart-count">{{this.cart_quantity}}</span></li> 
+        <li *ngIf="!isLogged" class="nav-item active" role="presentation"><a class="nav-link" routerLink="reg" >Registration</a></li>      
+    </ul>
+</nav>
+
+<div class="footer">All rights reserved to @Sumit</div>
